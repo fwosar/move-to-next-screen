@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schemalist>
+	<schema path="/org/gnome/shell/extensions/move-to-next-screen/" id="org.gnome.shell.extensions.move-to-next-screen" >
+		<key type="as" name="move-window-to-next-screen-shortcut">
+			<default><![CDATA[['<Shift><Control>Page_Up']]]></default>
+			<summary>The key you want to use to move the current window to the next screen.</summary>
+		</key>
+	</schema>
+</schemalist>
