@@ -6,7 +6,7 @@
       "45",
       "46"
     ],
-    "version": 1,
+    "version": 2,
     "settings-schema": "org.gnome.shell.extensions.move-to-next-screen",
     "url": "https://github.com/fwosar/move-to-next-screen"
 }
