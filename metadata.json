@@ -3,7 +3,8 @@
     "description": "Adds a keyboard shortcut to move the current window to the next screen",
     "uuid": "move-to-next-screen@wosar.me",
     "shell-version": [
-      "45"
+      "45",
+      "46"
     ],
     "version": 1,
     "settings-schema": "org.gnome.shell.extensions.move-to-next-screen",
