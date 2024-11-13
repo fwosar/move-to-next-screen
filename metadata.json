@@ -4,9 +4,10 @@
     "uuid": "move-to-next-screen@wosar.me",
     "shell-version": [
       "45",
-      "46"
+      "46",
+      "47"
     ],
-    "version": 2,
+    "version": 3,
     "settings-schema": "org.gnome.shell.extensions.move-to-next-screen",
     "url": "https://github.com/fwosar/move-to-next-screen"
 }
