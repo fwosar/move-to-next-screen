@@ -24,7 +24,7 @@ export default class MoveToNextScreenExtension extends Extension {
             .find(window => window.has_focus());
     }
 
-    moveToNextScreenHandler() {
+    moveToScreenByOffset(offset) {
         let window = this.getActiveWindow();
 
         if (!window) {
@@ -39,17 +39,38 @@ export default class MoveToNextScreenExtension extends Extension {
             return;
         }
 
-        window.move_to_monitor((window.get_monitor() + 1) % screenCount);
+        let newScreen = window.get_monitor() + offset;
+
+        if (newScreen < 0) {
+            newScreen = screenCount - 1;
+        } 
+        else
+        {
+            newScreen = newScreen % screenCount;
+        }
+
+        window.move_to_monitor(newScreen);
+    }
+
+    moveToNextScreenHandler() {
+        this.moveToScreenByOffset(1);
+    }
+
+    moveToPreviousScreenHandler() {
+        this.moveToScreenByOffset(-1);
     }
 
     enable() {
         this._settings = this.getSettings();
         Main.wm.addKeybinding("move-window-to-next-screen-shortcut", this._settings, Meta.KeyBindingFlags.IGNORE_AUTOREPEAT,
             Shell.ActionMode.NORMAL | Shell.ActionMode.OVERVIEW, this.moveToNextScreenHandler.bind(this));
+        Main.wm.addKeybinding("move-window-to-previous-screen-shortcut", this._settings, Meta.KeyBindingFlags.IGNORE_AUTOREPEAT,
+            Shell.ActionMode.NORMAL | Shell.ActionMode.OVERVIEW, this.moveToPreviousScreenHandler.bind(this));
     }
 
     disable() {
         Main.wm.removeKeybinding("move-window-to-next-screen-shortcut");
+        Main.wm.removeKeybinding("move-window-to-previous-screen-shortcut");
         this._settings = null;
     }
 }
