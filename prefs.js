@@ -20,7 +20,7 @@ class ShortcutsGroup extends Adw.PreferencesGroup {
         this.addShortcutRow("move-window-to-previous-screen-shortcut", "Move current window to previous screen");
     }
 
-    addShortcutRow(settingName, title, subtitle) {
+    addShortcutRow(settingName, title) {
         // Create a row for the shortcut
         const row = new Adw.ActionRow({
             title: title
