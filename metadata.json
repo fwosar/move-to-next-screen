@@ -6,9 +6,10 @@
   "shell-version": [
     "45",
     "46",
-    "47"
+    "47",
+    "48"
   ],
   "url": "https://github.com/fwosar/move-to-next-screen",
   "uuid": "move-to-next-screen@wosar.me",
-  "version": 3
+  "version": 4
 }
